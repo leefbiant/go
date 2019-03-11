@@ -4,27 +4,36 @@ import (
 	"time"
 )
 
+type BitMexErr struct {
+	Error struct {
+		Message string `json:"message"`
+		Name    string `json:"name"`
+	} `json:"error"`
+}
+
 type ApiKey struct {
 	Key       string `json:"ApiKey"`
 	SecretKey string `json:"SecretKey"`
 }
 
 type Positions []struct {
-	Account       float64 `json:"account"`
-	Symbol        string  `json:"symbol"`
-	Currency      string  `json:"currency"`
-	Underlying    string  `json:"underlying"`
-	QuoteCurrency string  `json:"quoteCurrency"`
-	Commission    float64 `json:"commission"` // 佣金
-	/* 	InitMarginReq        float64   `json:"initMarginReq"`
-	   	MaintMarginReq       float64   `json:"maintMarginReq"`
-	   	RiskLimit            float64   `json:"riskLimit"` */
-	Leverage float64 `json:"leverage"` // 当前杠杆倍数
-	/* 	CrossMargin          bool      `json:"crossMargin"`
-	   	DeleveragePercentile float64   `json:"deleveragePercentile"`
-	   	RebalancedPnl        float64   `json:"rebalancedPnl"`
-	   	PrevRealisedPnl      float64   `json:"prevRealisedPnl"`
-	   	PrevUnrealisedPnl    float64   `json:"prevUnrealisedPnl"` */
+	Account        float64 `json:"account"`
+	Symbol         string  `json:"symbol"`
+	Currency       string  `json:"currency"`
+	Underlying     string  `json:"underlying"`
+	QuoteCurrency  string  `json:"quoteCurrency"`
+	Commission     float64 `json:"commission"` // 佣金
+	InitMarginReq  float64 `json:"initMarginReq"`
+	MaintMarginReq float64 `json:"maintMarginReq"`
+
+	/* 	   	RiskLimit            float64   `json:"riskLimit"` */
+	Leverage    float64 `json:"leverage"` // 当前杠杆倍数
+	CrossMargin bool    `json:"crossMargin"`
+	/*
+		DeleveragePercentile float64   `json:"deleveragePercentile"`
+		RebalancedPnl        float64   `json:"rebalancedPnl"`
+		PrevRealisedPnl      float64   `json:"prevRealisedPnl"`
+		PrevUnrealisedPnl    float64   `json:"prevUnrealisedPnl"` */
 	PrevClosePrice   float64   `json:"prevClosePrice"`   // 标记价格
 	OpeningTimestamp time.Time `json:"openingTimestamp"` // 开仓时间
 	OpeningQty       float64   `json:"openingQty"`       // 开仓杠杆数
@@ -47,38 +56,42 @@ type Positions []struct {
 	CurrentTimestamp     time.Time `json:"currentTimestamp"`
 	*/
 	CurrentQty float64 `json:"currentQty"`
-	/*
-		CurrentCost          float64   `json:"currentCost"`
-		CurrentComm          float64   `json:"currentComm"`
-		RealisedCost         float64   `json:"realisedCost"`
-		UnrealisedCost       float64   `json:"unrealisedCost"`
-		GrossOpenCost        float64   `json:"grossOpenCost"`
-		GrossOpenPremium     float64   `json:"grossOpenPremium"`
-		GrossExecCost        float64   `json:"grossExecCost"`
-		IsOpen               bool      `json:"isOpen"`
-		MarkPrice            float64   `json:"markPrice"`
-		MarkValue            float64   `json:"markValue"`
-		RiskValue            float64   `json:"riskValue"`
-		HomeNotional         float64   `json:"homeNotional"`
-		ForeignNotional      float64   `json:"foreignNotional"`
-		PosState             string    `json:"posState"`
-		PosCost              float64   `json:"posCost"`
-		PosCost2             float64   `json:"posCost2"`
-		PosCross             float64   `json:"posCross"`
-		PosInit              float64   `json:"posInit"`
-		PosComm              float64   `json:"posComm"`
-		PosLoss              float64   `json:"posLoss"`
-		PosMargin            float64   `json:"posMargin"`
-		PosMaint             float64   `json:"posMaint"`
-		PosAllowance         float64   `json:"posAllowance"`
-		TaxableMargin        float64   `json:"taxableMargin"`
-		InitMargin           float64   `json:"initMargin"` */
+
+	/* 	CurrentCost      float64 `json:"currentCost"`
+	   	CurrentComm      float64 `json:"currentComm"`
+	   	RealisedCost     float64 `json:"realisedCost"`
+	   	UnrealisedCost   float64 `json:"unrealisedCost"`
+	   	GrossOpenCost    float64 `json:"grossOpenCost"`
+	   	GrossOpenPremium float64 `json:"grossOpenPremium"`
+	   	GrossExecCost    float64 `json:"grossExecCost"`
+	   	IsOpen           bool    `json:"isOpen"`
+	   	MarkPrice        float64 `json:"markPrice"`
+	   	MarkValue        float64 `json:"markValue"`
+	   	RiskValue        float64 `json:"riskValue"`
+	   	HomeNotional     float64 `json:"homeNotional"`
+	   	ForeignNotional  float64 `json:"foreignNotional"`
+	   	PosState         string  `json:"posState"`
+	   	PosCost          float64 `json:"posCost"`
+	   	PosCost2         float64 `json:"posCost2"` */
+
+	PosCross float64 `json:"posCross"`
+
+	/* PosInit float64 `json:"posInit"`
+	PosComm float64 `json:"posComm"` */
+
+	PosLoss float64 `json:"posLoss"`
+
+	/* 	PosMargin     float64 `json:"posMargin"`
+	   	PosMaint      float64 `json:"posMaint"`
+	   	PosAllowance  float64 `json:"posAllowance"`
+	   	TaxableMargin float64 `json:"taxableMargin"`
+	   	InitMargin    float64 `json:"initMargin"` */
 
 	MaintMargin float64 `json:"maintMargin"`
 
-	/* SessionMargin        float64   `json:"sessionMargin"`
-	TargetExcessMargin   float64   `json:"targetExcessMargin"`
-	VarMargin            float64   `json:"varMargin"` */
+	/* 	SessionMargin      float64 `json:"sessionMargin"`
+	   	TargetExcessMargin float64 `json:"targetExcessMargin"`
+	   	VarMargin          float64 `json:"varMargin"` */
 
 	RealisedGrossPnl float64 `json:"realisedGrossPnl"` // 已实现盈亏
 	/* 	RealisedTax          float64   `json:"realisedTax"`
@@ -93,14 +106,14 @@ type Positions []struct {
 	UnrealisedTax        float64   `json:"unrealisedTax"`
 	UnrealisedPnl        float64   `json:"unrealisedPnl"`
 	*/
-	UnrealisedPnlPcnt    float64   `json:"unrealisedPnlPcnt"`
-	UnrealisedRoePcnt    float64   `json:"unrealisedRoePcnt"`
+	UnrealisedPnlPcnt float64 `json:"unrealisedPnlPcnt"`
+	UnrealisedRoePcnt float64 `json:"unrealisedRoePcnt"`
 	/*
-	SimpleQty            float64   `json:"simpleQty"`
-	SimpleCost           float64   `json:"simpleCost"`
-	SimpleValue          float64   `json:"simpleValue"`
-	SimplePnl            float64   `json:"simplePnl"`
-	SimplePnlPcnt        float64   `json:"simplePnlPcnt"` */
+		SimpleQty            float64   `json:"simpleQty"`
+		SimpleCost           float64   `json:"simpleCost"`
+		SimpleValue          float64   `json:"simpleValue"`
+		SimplePnl            float64   `json:"simplePnl"`
+		SimplePnlPcnt        float64   `json:"simplePnlPcnt"` */
 	AvgCostPrice float64 `json:"avgCostPrice"`
 
 	/* 	AvgEntryPrice        float64   `json:"avgEntryPrice"`
@@ -115,13 +128,14 @@ type Positions []struct {
 	// OrderTime int64     `json:"ordertime"`
 }
 
-type ContractInfo[] struct {
+type ContractInfo []struct {
 	// Account          float64       `json:"account"`
-	Symbol           string    `json:"symbol"`
-	Currency         string    `json:"currency"`
-	CurrentQty       float64   `json:"currentQty"`
-	MarkPrice        float64   `json:"markPrice"`
-	Leverage         float64   `json:"leverage"`
+	Symbol        string  `json:"symbol"`
+	QuoteCurrency string  `json:"quoteCurrency"`
+	CurrentQty    float64 `json:"currentQty"`
+	MarkPrice     float64 `json:"markPrice"`
+	Leverage      float64 `json:"leverage"`
+	AvgCostPrice  float64 `json:"avgCostPrice"`
 }
 
 type Orders []struct {
@@ -134,7 +148,7 @@ type Orders []struct {
 	Symbol  string  `json:"symbol"`
 	Side    string  `json:"side"`
 
-	SimpleOrderQty        float64   `json:"simpleOrderQty"`
+	SimpleOrderQty float64 `json:"simpleOrderQty"`
 
 	OrderQty float64 `json:"orderQty"`
 	Price    float64 `json:"price"`
@@ -148,8 +162,8 @@ type Orders []struct {
 
 	/* 	SettlCurrency         string    `json:"settlCurrency"` */
 
-	OrdType string `json:"ordType"`
-	Commission    float64 `json:"commission"` 
+	OrdType    string  `json:"ordType"`
+	Commission float64 `json:"commission"`
 
 	/* 	TimeInForce           string    `json:"timeInForce"`
 	   	ExecInst              string    `json:"execInst"`
@@ -157,25 +171,26 @@ type Orders []struct {
 	   	ExDestination         string    `json:"exDestination"`
 	*/
 	OrdStatus string `json:"ordStatus"`
-	
-/* 		Triggered             string    `json:"triggered"`
-		WorkingIndicator      bool      `json:"workingIndicator"`
-		OrdRejReason          string    `json:"ordRejReason"`
-		SimpleLeavesQty       float64   `json:"simpleLeavesQty"`*/ 
 
-		LeavesQty             float64   `json:"leavesQty"`
+	/* 		Triggered             string    `json:"triggered"`
+	   		WorkingIndicator      bool      `json:"workingIndicator"`
+	   		OrdRejReason          string    `json:"ordRejReason"`
+	   		SimpleLeavesQty       float64   `json:"simpleLeavesQty"`*/
 
-/* 		SimpleCumQty          float64   `json:"simpleCumQty"` */
+	LeavesQty float64 `json:"leavesQty"`
 
-		CumQty                float64   `json:"cumQty"`
+	/* 		SimpleCumQty          float64   `json:"simpleCumQty"` */
 
-/* 		AvgPx                 float64   `json:"avgPx"`
-		MultiLegReportingType string    `json:"multiLegReportingType"`
-		Text                  string    `json:"text"`  */
+	CumQty float64 `json:"cumQty"`
+
+	/* 		AvgPx                 float64   `json:"avgPx"`
+	   		MultiLegReportingType string    `json:"multiLegReportingType"`
+	   		Text                  string    `json:"text"`  */
 
 	TransactTime time.Time `json:"transactTime"`
 	Timestamp    time.Time `json:"timestamp"`
 	OrderTime    int64     `json:"ordertime"`
+	Leverage      float64 `json:"leverage"`
 }
 
 type NewOrder struct {
@@ -261,18 +276,18 @@ type DelOrder []struct {
 }
 
 type ExchangeInfo []struct {
-	Symbol          string    `json:"symbol"`
-	RootSymbol      string    `json:"rootSymbol"`
-	State           string    `json:"state"`
-	Expiry          time.Time `json:"expiry"`
-	ExpiryTime      int64 `json:"expiry_time"`
-	MaxOrderQty     float64       `json:"maxOrderQty"`
-	MaxPrice        float64       `json:"maxPrice"`
-	InitMargin      float64   `json:"initMargin"`
-	RiskLimit       float64     `json:"riskLimit"`
-	RiskStep        float64     `json:"riskStep"`
-	QuoteCurrency   string     `json:"quoteCurrency"`
-	Leveles         []int     `json:"leveles"`
+	Symbol        string    `json:"symbol"`
+	RootSymbol    string    `json:"rootSymbol"`
+	State         string    `json:"state"`
+	Expiry        time.Time `json:"expiry"`
+	ExpiryTime    int64     `json:"expiry_time"`
+	MaxOrderQty   float64   `json:"maxOrderQty"`
+	MaxPrice      float64   `json:"maxPrice"`
+	InitMargin    float64   `json:"initMargin"`
+	RiskLimit     float64   `json:"riskLimit"`
+	RiskStep      float64   `json:"riskStep"`
+	QuoteCurrency string    `json:"quoteCurrency"`
+	Leveles       []int     `json:"leveles"`
 }
 
 type UserMargin struct {
@@ -317,8 +332,8 @@ type UserMargin struct {
 	   	Timestamp          time.Time `json:"timestamp"`
 	   	GrossLastValue     float64   `json:"grossLastValue"`
 		   Commission         float64   `json:"commission"` */
-	WalletBalanceUsd float64 `json:"walletBalanceUsd"`
-	XbtPrice         float64 `json:"xbtprice"`
+	WalletBalanceUsd float64      `json:"walletBalanceUsd"`
+	XbtPrice         float64      `json:"xbtprice"`
 	ExchangeInfoList ExchangeInfo `json:"exchangelist"`
 }
 
@@ -382,12 +397,12 @@ type ModifyOrder struct {
 	   	InitMarginReq        float64       `json:"initMarginReq"`
 	   	MaintMarginReq       float64       `json:"maintMarginReq"`
 	   	RiskLimit            float64       `json:"riskLimit"` */
-	Leverage float64 `json:"leverage"`
-	/* 	CrossMargin          bool      `json:"crossMargin"`
-	   	DeleveragePercentile float64       `json:"deleveragePercentile"`
-	   	RebalancedPnl        float64       `json:"rebalancedPnl"`
-	   	PrevRealisedPnl      float64       `json:"prevRealisedPnl"`
-	   	PrevUnrealisedPnl    float64       `json:"prevUnrealisedPnl"` */
+	Leverage    float64 `json:"leverage"`
+	CrossMargin bool    `json:"crossMargin"`
+	/* 	   	DeleveragePercentile float64       `json:"deleveragePercentile"`
+	   	   	RebalancedPnl        float64       `json:"rebalancedPnl"`
+	   	   	PrevRealisedPnl      float64       `json:"prevRealisedPnl"`
+	   	   	PrevUnrealisedPnl    float64       `json:"prevUnrealisedPnl"` */
 	PrevClosePrice   float64   `json:"prevClosePrice"`
 	OpeningTimestamp time.Time `json:"openingTimestamp"`
 	/* 	OpeningQty           float64       `json:"openingQty"`
@@ -448,14 +463,14 @@ type ModifyOrder struct {
 	   	IndicativeTax        float64       `json:"indicativeTax"`
 	   	UnrealisedTax        float64       `json:"unrealisedTax"`
 	   	UnrealisedPnl        float64       `json:"unrealisedPnl"` */
-	   	UnrealisedPnlPcnt    float64       `json:"unrealisedPnlPcnt"`
-		UnrealisedRoePcnt    float64       `json:"unrealisedRoePcnt"`
-		   /*
-	   	SimpleQty            float64       `json:"simpleQty"`
-	   	SimpleCost           float64       `json:"simpleCost"`
-	   	SimpleValue          float64       `json:"simpleValue"`
-	   	SimplePnl            float64       `json:"simplePnl"`
-	   	SimplePnlPcnt        float64       `json:"simplePnlPcnt"` */
+	UnrealisedPnlPcnt float64 `json:"unrealisedPnlPcnt"`
+	UnrealisedRoePcnt float64 `json:"unrealisedRoePcnt"`
+	/*
+		SimpleQty            float64       `json:"simpleQty"`
+		SimpleCost           float64       `json:"simpleCost"`
+		SimpleValue          float64       `json:"simpleValue"`
+		SimplePnl            float64       `json:"simplePnl"`
+		SimplePnlPcnt        float64       `json:"simplePnlPcnt"` */
 	AvgCostPrice float64 `json:"avgCostPrice"`
 	/* 	AvgEntryPrice        float64       `json:"avgEntryPrice"`
 	   	BreakEvenPrice       float64       `json:"breakEvenPrice"` */
@@ -468,50 +483,50 @@ type ModifyOrder struct {
 }
 
 type InstrumentObj []struct {
-	Symbol                         string    `json:"symbol"`
-	RootSymbol                     string    `json:"rootSymbol"`
-	State                          string    `json:"state"`
-	Typ                            string    `json:"typ"`
-	Listing                        time.Time `json:"listing"`
-	Front                          time.Time `json:"front"`
-	Expiry                         time.Time `json:"expiry"`
-	Settle                         time.Time `json:"settle"`
+	Symbol     string    `json:"symbol"`
+	RootSymbol string    `json:"rootSymbol"`
+	State      string    `json:"state"`
+	Typ        string    `json:"typ"`
+	Listing    time.Time `json:"listing"`
+	Front      time.Time `json:"front"`
+	Expiry     time.Time `json:"expiry"`
+	Settle     time.Time `json:"settle"`
 
-/* 	Relistfloat64erval             time.Time `json:"relistfloat64erval"`
-	InverseLeg                     string    `json:"inverseLeg"`
-	SellLeg                        string    `json:"sellLeg"`
-	BuyLeg                         string    `json:"buyLeg"`
-	OptionStrikePcnt               float64   `json:"optionStrikePcnt"`
-	OptionStrikeRound              float64   `json:"optionStrikeRound"`
-	OptionStrikePrice              float64   `json:"optionStrikePrice"`
-	OptionMultiplier               float64   `json:"optionMultiplier"`
-	PositionCurrency               string    `json:"positionCurrency"`
-	Underlying                     string    `json:"underlying"`
-	QuoteCurrency                  string    `json:"quoteCurrency"`
-	UnderlyingSymbol               string    `json:"underlyingSymbol"`
-	Reference                      string    `json:"reference"`
-	ReferenceSymbol                string    `json:"referenceSymbol"`
-	Calcfloat64erval               time.Time `json:"calcfloat64erval"`
-	Publishfloat64erval            time.Time `json:"publishfloat64erval"`
-	PublishTime                    time.Time `json:"publishTime"` */
+	/* 	Relistfloat64erval             time.Time `json:"relistfloat64erval"`
+	   	InverseLeg                     string    `json:"inverseLeg"`
+	   	SellLeg                        string    `json:"sellLeg"`
+	   	BuyLeg                         string    `json:"buyLeg"`
+	   	OptionStrikePcnt               float64   `json:"optionStrikePcnt"`
+	   	OptionStrikeRound              float64   `json:"optionStrikeRound"`
+	   	OptionStrikePrice              float64   `json:"optionStrikePrice"`
+	   	OptionMultiplier               float64   `json:"optionMultiplier"`
+	   	PositionCurrency               string    `json:"positionCurrency"`
+	   	Underlying                     string    `json:"underlying"`
+	   	QuoteCurrency                  string    `json:"quoteCurrency"`
+	   	UnderlyingSymbol               string    `json:"underlyingSymbol"`
+	   	Reference                      string    `json:"reference"`
+	   	ReferenceSymbol                string    `json:"referenceSymbol"`
+	   	Calcfloat64erval               time.Time `json:"calcfloat64erval"`
+	   	Publishfloat64erval            time.Time `json:"publishfloat64erval"`
+	   	PublishTime                    time.Time `json:"publishTime"` */
 
-	MaxOrderQty                    float64   `json:"maxOrderQty"`
-	MaxPrice                       float64   `json:"maxPrice"`
-	LotSize                        float64   `json:"lotSize"`
+	MaxOrderQty float64 `json:"maxOrderQty"`
+	MaxPrice    float64 `json:"maxPrice"`
+	LotSize     float64 `json:"lotSize"`
 
-/* 	TickSize                       float64   `json:"tickSize"`
-	Multiplier                     float64   `json:"multiplier"`
-	SettlCurrency                  string    `json:"settlCurrency"`
-	UnderlyingToPositionMultiplier float64   `json:"underlyingToPositionMultiplier"`
-	UnderlyingToSettleMultiplier   float64   `json:"underlyingToSettleMultiplier"`
-	QuoteToSettleMultiplier        float64   `json:"quoteToSettleMultiplier"`
-	IsQuanto                       bool      `json:"isQuanto"`
-	IsInverse                      bool      `json:"isInverse"` */
+	/* 	TickSize                       float64   `json:"tickSize"`
+	   	Multiplier                     float64   `json:"multiplier"`
+	   	SettlCurrency                  string    `json:"settlCurrency"`
+	   	UnderlyingToPositionMultiplier float64   `json:"underlyingToPositionMultiplier"`
+	   	UnderlyingToSettleMultiplier   float64   `json:"underlyingToSettleMultiplier"`
+	   	QuoteToSettleMultiplier        float64   `json:"quoteToSettleMultiplier"`
+	   	IsQuanto                       bool      `json:"isQuanto"`
+	   	IsInverse                      bool      `json:"isInverse"` */
 
-	InitMargin                     float64   `json:"initMargin"`
-	Mafloat64Margin                float64   `json:"mafloat64Margin"`
-	RiskLimit                      float64   `json:"riskLimit"`
-	RiskStep                       float64   `json:"riskStep"`
+	InitMargin      float64 `json:"initMargin"`
+	Mafloat64Margin float64 `json:"mafloat64Margin"`
+	RiskLimit       float64 `json:"riskLimit"`
+	RiskStep        float64 `json:"riskStep"`
 
 	/* Limit                          float64   `json:"limit"`
 	Capped                         bool      `json:"capped"`

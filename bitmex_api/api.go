@@ -5,11 +5,11 @@ import (
 )
 
 var (
-	Leveles1   = []int{1}
-	Leveles20  = []int{1, 2, 3, 5, 10, 20}
-	Leveles30  = []int{1, 2, 3, 5, 10, 20, 33}
-	Leveles50  = []int{1, 2, 3, 5, 10, 20, 25, 50}
-	Leveles100 = []int{1, 2, 3, 5, 10, 20, 25, 50, 100}
+	Leveles1   = []int{0, 1}
+	Leveles20  = []int{0, 1, 2, 3, 5, 10, 20}
+	Leveles30  = []int{0, 1, 2, 3, 5, 10, 20, 33}
+	Leveles50  = []int{0, 1, 2, 3, 5, 10, 20, 25, 50}
+	Leveles100 = []int{0, 1, 2, 3, 5, 10, 20, 25, 50, 100}
 )
 
 func GetLevLes(initMargin float64) []int {
@@ -51,7 +51,7 @@ func GetPosition(ApiKey string, SecretKey string, Endpoint string, ProxyAddr str
 	config.ApiKey = ApiKey
 	config.SecretKey = SecretKey
 
-	config.IsPrint = false
+	config.IsPrint = true
 	client := NewClient(config, ProxyAddr)
 	defer client.Close()
 
@@ -66,7 +66,7 @@ func GetContractInfo(ApiKey string, SecretKey string, Endpoint string, ProxyAddr
 	config.ApiKey = ApiKey
 	config.SecretKey = SecretKey
 
-	config.IsPrint = true
+	config.IsPrint = false
 	client := NewClient(config, ProxyAddr)
 	defer client.Close()
 
@@ -178,4 +178,3 @@ func ModifyEntrustOrder(ApiKey string, SecretKey string, Endpoint string, ProxyA
 	res, err := client.ModifyEntrustOrder(opt)
 	return res, err
 }
-

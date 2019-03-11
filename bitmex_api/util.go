@@ -112,12 +112,15 @@ func BitmaxSigner(message string, secretKey string) string {
 
 func printRequest(config Config, request *http.Request, body string, preHash string) {
 	if true {
-		if config.SecretKey != "" {
+
+/* 		if config.SecretKey != "" {
 			log.Info("  Secret-Key: " + config.SecretKey)
 		}
-		log.Info("  Request(" + IsoTime() + "):")
+		log.Info("  Request(" + IsoTime() + "):") */
+
 		log.Info("\tUrl: " + request.URL.String())
-		log.Info("\tMethod: " + strings.ToUpper(request.Method))
+
+/* 		log.Info("\tMethod: " + strings.ToUpper(request.Method))
 		if len(request.Header) > 0 {
 			log.Info("\tHeaders: ")
 			for k, v := range request.Header {
@@ -130,7 +133,7 @@ func printRequest(config Config, request *http.Request, body string, preHash str
 		log.Info("\tBody: " + body)
 		if preHash != "" {
 			log.Info("  PreHash: " + preHash)
-		}
+		} */
 	}
 }
 

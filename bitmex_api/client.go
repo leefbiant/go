@@ -10,12 +10,18 @@ import (
 	// "strconv"
 	"elf/bbexgo/log"
 	"strings"
-	"time"
 	"sync"
+	"time"
 )
+
 var (
 	mutex sync.Mutex
+	ErrMsgMap = map[string]string{
+		"Account has insufficient Available Balance" : "帐户可用余额不足",
+		"Order price is below the liquidation price of current long position" : "订单价格低于当前多头头寸的清算价格",
+	}
 )
+
 type Client struct {
 	Config     Config
 	HttpClient *http.Client
@@ -87,17 +93,17 @@ func (client *Client) Request(method string, requestPath string,
 		log.Error("NewRequest err:", err)
 		return response, err
 	}
+
 	mutex.Lock()
-	
+
 	// Sign and set request headers
-	timestamp := fmt.Sprint(time.Now().UnixNano() / int64(time.Millisecond)) 
+	timestamp := fmt.Sprint(time.Now().UnixNano() / int64(time.Millisecond))
 	preHash := PreHashString(timestamp, method, requestPath, jsonBody)
 	sign := BitmaxSigner(preHash, config.SecretKey)
 
 	Headers(request, config, timestamp, sign)
-	if config.IsPrint {
-		printRequest(config, request, jsonBody, preHash)
-	}
+
+	printRequest(config, request, jsonBody, preHash)
 
 	// send a request to remote server, and get a response
 	response, err = client.HttpClient.Do(request)
@@ -154,7 +160,15 @@ func (client *Client) Request(method string, requestPath string,
 	} else if status >= 400 || status <= 500 {
 		log.Error("Http error(400~500) result: status=" + IntToString(status) + ", message=" + message + ", body=" + responseBodyString)
 		if body != nil {
-			log.Error("http status err:", status, " body:", body)
+			var bitmex_err BitMexErr
+			if err := JsonBytes2Struct(body, &bitmex_err); err == nil {
+				log.Error("http status err:", status, " Message:", bitmex_err.Error.Message)
+				err_msg := bitmex_err.Error.Message
+				if err_zh, ok := ErrMsgMap[err_msg]; ok {
+					err_msg = err_zh
+				}
+				return response, errors.New(err_msg)
+			}
 			return response, errors.New(string(body))
 		}
 	} else {
