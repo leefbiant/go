@@ -1,0 +1,72 @@
+{16_-w9NHbtawoMafYMgv2qauna3jAc5bIvBlicq-1939Pa99AI2tM9cH5NzM4LROnCQlxRs_ayZ5S8D7g8kz3X06S5OkH_NIfR9KsY1RgT0zAMFwD9_JdOlX0MffrCzNCy5s-BBfSp3ytfnuaDuFWOeAEAMDV 7200 0 }
+[mysql] 2018/11/28 08:56:01 packets.go:36: read tcp 192.168.50.65:45210->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:56:01 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/28 08:56:02 packets.go:36: read tcp 192.168.50.65:45206->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:56:02 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/28 08:56:02 packets.go:36: read tcp 192.168.50.65:45204->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:56:02 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/28 08:56:03 packets.go:36: read tcp 192.168.50.65:45218->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:56:03 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/28 08:58:05 packets.go:36: read tcp 192.168.50.65:45202->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:58:05 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/28 08:58:05 packets.go:36: read tcp 192.168.50.65:45208->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:58:05 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/28 08:58:05 packets.go:36: read tcp 192.168.50.65:45212->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:58:05 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/28 08:58:05 packets.go:36: read tcp 192.168.50.65:45216->47.91.233.75:3306: read: connection reset by peer
+2018/11/28 08:58:05 QueryFormMysql Query err:invalid connection
+{16_kw89aTQvGB2gwnQc6eZQfAVweGe1RcBFNQyunt2BZ-11w2FA18vkgfGt9ulkJxri601kY7nZZeR0LdIkQlRPiMQzLNMEavSrG5i4doP-ls_e0plxcho6r3hj7o85B-bHVX4wwwxRnKxAdTVXTXDhAJAGKQ 7200 0 }
+{16_OcCqPAF2TMnMQrFEhwgI2YP-rUVm9pSuRYu5w-Ew99dNMVHhJ-Pc__FDHwhPjj8LQv_7yRlk0hJdUWB5W-O537cJON4-N7bf8ipnw_bsPCk9ozOPwPu8JxVqSVEbfHa5xeyw6rpqSvx5Ik5dKQMeAHASYU 7200 0 }
+{16_4qxig7LovqUkPXIaYNbUVn-Dw4BW9X4i7kDNitIGCTylrAXG0HbYixHiUTquWA1uFlebJN6KV6IG8N906LDCN3yyb3HTN8lzRS-Vi4VKf1fVdJJFqeBobdHaaDvSluzFQKU05mRXjPtMeXwPPZTgAIAFPJ 7200 0 }
+{16_ZZWQ0SdC1rbjgvG3aW8t3ZdCtSEm8XiLiizgAmNuiwosAN8OhPs0qVOD5x6Z-hc10wqk6-WfOukosM9MthKb0aRJC42l172c_Fe7zb7-RRB2dHS3dlvOuyUsS5UHENdADABYH 7200 0 }
+{16_Y0Qy1RfrZlpeoOEvrEOqRJI7FLQCVadEbFl6Bcu5hB63THF1Euo87R-l2vJKC1UnGw3BIIk08abZbLFWr52KUMgGXpd3b3pJoWOuz8_5YBb2Hzq9JJ-7eq7BB-uBABmYgWLqL5xY8vNMu9ruLVCjAFAOYF 7200 0 }
+[mysql] 2018/11/29 06:38:44 packets.go:36: read tcp 192.168.50.65:40338->47.91.233.75:3306: read: connection reset by peer
+2018/11/29 06:38:44 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/29 06:43:28 packets.go:36: read tcp 192.168.50.65:40334->47.91.233.75:3306: read: connection reset by peer
+2018/11/29 06:43:28 QueryFormMysql Query err:invalid connection
+[mysql] 2018/11/29 06:49:56 packets.go:72: read tcp 192.168.50.65:40344->47.91.233.75:3306: read: connection reset by peer
+[mysql] 2018/11/29 06:49:56 packets.go:405: busy buffer
+{16_gWF6tSn7hFKG_EsXI_MJcdBqoCE1puZVlznRKzbOCfcwEqPx6slnHIg-I2eBZFIx4pn2OJK3-rsIJUp3Zby_b8b8h9BeQxgZS-v9t1yttwAVYWaNIwU2dKFLTZPPtV369lZ7fY8tqkcRLyM5KIDcABAFDY 7200 0 }
+{16_0ig6NN8T_6m-L1Vu4Tit5cUGtXatSVE5YBa4ENM17A0AItCkfOb_4jQ1HBWR19wSDS6K1VVdnPkfWOza6kzD1uTHTNBvKggsSETjhBmSpaguZA3k0O88DabTI7xT4TKgAo2D4xGuD4cVbeq4IKRgABAYAH 7200 0 }
+{16_mqBoOcgvUqfGvOl27gxMC9Y_l_fgJSSvZvcAEBrmoQoKUJDld0dtOGZsgKOP1IZPBA5NwtKkcb64922xCG6wIHjBOChL9l9fXqGlTzN6qmcEwlPBH41mxD1qqP0E9PEeNFlmE1UH_HuhRblnXICdAHAOZT 7200 0 }
+2018/11/29 14:38:36 path can`t read
+{16_9B8CWuMhFAbEjWf_pd0rd3GJ3EOYm4Usi-dPxUnhuUIDXPOIw6Dz5rOVBPbX11K1rDbAaYPdfaqfs-ywuLmOwBTjPGKFoWYX3201umWtPk-rmXyKh30JemkxqTgilohqKqxbAnJ4Wj0PGroJGDQjAIAYVI 7200 0 }
+{16_C4upv4l0y8CQefDlI_MJcdBqoCE1puZVlznRK9hKU1Z7cITpQTaNgci9SZsfDsCorjMIVVI8XmOmKEqs74Nj7z7HZSWXc9LPt4yO2Z1-hNMxHbjUM57d3vuhKOxjO64x9Wdmb3JgyjJPvZ7kPWVcAHAVCB 7200 0 }
+{16_bsyHggbgQw-_dZPUhtDnqVmkn1eFEG3wu3p56gM0_p6T3On-7QcChSR6RbNSb1V0L6NZ82NE70_vongYB2Tuwj_zaJM4_jlIDWnOnNmp5KEe4sVD1hLJRGBYt-AIavzsoBkMfHPZSGhy2_B7PBBbACALXX 7200 0 }
+{16_iUDHpkHYJfQfbEh1Z0Gj2SDz4uCXl7siPVix5rPf6G8EouVn3eRUcDs5gR6jLFWhkIg9RUk0fL-jdOaVTdM764llqPK7MxTL131NKIeJ_1LzhqF5_e2xQGAbxWSbULU45ca1SPcfj_6uVpLBDLZbADANVJ 7200 0 }
+{16_3HE99DcVTx9XiWWAcE-K7GSaLfUjVIejSa1YiRCBbhUlBQB2O5hgUBGMxiTwx9GLyUE7KbVvFMtw7CbxF-m25VIdf6M0G_e5WXCJ0u-1Jp9TNdqUN1jyq9O6EvcNxFeK1S8SzBTU1_WkhC8kWMEjAHASIA 7200 0 }
+{16_lAR98fmdaA99PhXih9e2KRA0hTn3X4JkQlxKlPVnNLRtIaIQ993bC-zZi1Fjh1I0qbhKso41Czn9hez7xc2z9mvKLJwa_JcI1-gZaVHpB7lY6TnTvOtyVXueHL6WLboHFbl9-Az1Pve8KV2HAMFfABAVHA 7200 0 }
+{16_PC_mvo3tXZtjJDKCGSf22UjFKTG4txlk7KTM7BxraDJgBkeuBRM1bfwfGeNrrJZbhJPhbBiPLaZjp18g_NIANhSzKPOfvoLBwdPR6pIaccWMiI6otfSw6KVnvimQWqaKfPZsa3OMo3ro2h0mGVMjAGAPEV 7200 0 }
+[mysql] 2018/11/30 08:51:16 packets.go:36: read tcp 192.168.50.65:35640->47.91.233.75:3306: read: connection reset by peer
+[mysql] 2018/11/30 08:51:16 packets.go:36: read tcp 192.168.50.65:35652->47.91.233.75:3306: read: connection reset by peer
+[mysql] 2018/11/30 08:51:16 packets.go:36: read tcp 192.168.50.65:35654->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+QueryFormMysql Query err: invalid connection
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:51:17 packets.go:36: read tcp 192.168.50.65:55120->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:51:17 packets.go:36: read tcp 192.168.50.65:55124->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:51:18 packets.go:36: read tcp 192.168.50.65:55140->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:51:20 packets.go:36: read tcp 192.168.50.65:55130->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:51:20 packets.go:36: read tcp 192.168.50.65:55126->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:53:52 packets.go:36: read tcp 192.168.50.65:35638->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:53:55 packets.go:36: read tcp 192.168.50.65:35656->47.91.233.75:3306: read: connection reset by peer
+[mysql] 2018/11/30 08:53:55 packets.go:36: read tcp 192.168.50.65:35650->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:55:18 packets.go:36: read tcp 192.168.50.65:55132->47.91.233.75:3306: read: connection reset by peer
+[mysql] 2018/11/30 08:55:18 packets.go:36: read tcp 192.168.50.65:55118->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:55:18 packets.go:36: read tcp 192.168.50.65:55138->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:55:18 packets.go:36: read tcp 192.168.50.65:55128->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+[mysql] 2018/11/30 08:55:18 packets.go:36: read tcp 192.168.50.65:55122->47.91.233.75:3306: read: connection reset by peer
+QueryFormMysql Query err: invalid connection
+{16_Hv00SK4iikvZT3_0SRxtuzlgLab2LJSLJfY82J9cmSlYVv-5jF5wK_8kHv635CGhhPpQeQVZkG6Tn2eG7JvoLD4wUEwkHcHKrCnE6ZzpPSq_N3eSc4aGkKj34x7D4KZV1qDDwDS18Yft1BDXRAAdAAAFOO 7200 0 }
